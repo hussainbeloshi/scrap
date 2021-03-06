@@ -111,3 +111,18 @@ DATABASES = {
     }
 }
 ```
+
+2. Go to the ```models.py``` and add class that you want for your app. E.g.:
+```
+from django.db import models
+
+class Text(models.Model):
+    title = models.CharField(max_length=50)
+    source = models.CharField(max_length=50)
+    img = models.ImageField()
+    quote = models.TextField()
+    speaker = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.title
+```
