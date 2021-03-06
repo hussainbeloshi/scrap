@@ -128,3 +128,4 @@ class Text(models.Model):
 ```
 
 3. Install Pillow for the images: ```python -m pip install Pillow```
+4. Create super user to log in the admin panel ```/admin```: ```python manage.py createsuperuser```
