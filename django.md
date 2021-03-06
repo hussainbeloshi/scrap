@@ -7,7 +7,7 @@
 5. Test the localhost by using this command: ```python manage.py runserver```
 6. Create new folders for the statics ```static``` and for the templates ```temp```, and then place all the statics (e.g. ```.css``` and ```.js```) in the static folder, and the templates ```.html``` in the temp folder.
 7. Create a new Django application: ```django-admin startapp NAME```
-8. Call the new app from the Django project settings (PROJECTNAME/settings.py). Add new line (e.g. ```APP NAME``` in the ```INSTALLED_APPS```
+8. Call the new app from the Django project settings (```PROJECTNAME/settings.py```). Add new line (e.g. ```APP NAME``` in the ```INSTALLED_APPS```
 9. Create a ```urls.py``` in the app directory, and write the following:
 ```
 from django.urls import path
