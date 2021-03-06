@@ -32,15 +32,24 @@ urlpatterns = [
 ]
 ```
 
-11. Test the localhost by using this command: ```python manage.py runserver```
-12. Go to the (```PROJECTNAME/settings.py```), and add the following line on the top of the page: ```import os```
-13. Call the templates and the statics from the (```PROJECTNAME/settings.py```) by add the following in the ```TEMPLATES``` ```'DIRS':```:
+11. Add the following in the ```views .py```: 
+```
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("test");
+```
+
+12. Test the localhost by using this command: ```python manage.py runserver```
+13. Go to the (```PROJECTNAME/settings.py```), and add the following line on the top of the page: ```import os```
+14. Call the templates and the statics from the (```PROJECTNAME/settings.py```) by add the following in the ```TEMPLATES``` ```'DIRS':```:
 ```
 'DIRS': [os.path.join(BASE_DIR, 'temp')],
 ```
 
 
-14. On the buttom of the file, next to the ```STATIC_URL = '/static/'```, add the following lines: 
+15. On the buttom of the file, next to the ```STATIC_URL = '/static/'```, add the following lines: 
 ```
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
