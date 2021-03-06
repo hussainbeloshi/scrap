@@ -156,8 +156,9 @@ def home(request):
 
 2. Go to the ```index.html``` file and write the loop/Jinja:
 ```
-{% for text in dests %}
+{% for i in Post %}
 ```
+```{{ i.title }}```
 ```
 {% endfor %}
 ```
