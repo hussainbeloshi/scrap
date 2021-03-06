@@ -18,76 +18,15 @@ urlpatterns = [
 ]
 ```
 
-10. 
-
-#################
-enviroment and django
-#################
-
-
-\env\Scripts\activate.bat
-pip install django
-\myProject\django-admin startproject myProject
-django-admin startapp index
-
-put all template files in static folder
-
-create floder for template and put htmls inside it
-
-SETTINGS:
-INSTALLED_APPS = [ 'appname',
-
-create urls.py in the app:
-put -> 
-from django.urls import path
-from . import views
+10. Go to the ```urls.py``` of the project files, and write the following:
+```
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('/', views.home, name='home'),
-
+    
+    path('', include('index.urls')),
+    path('admin/', admin.site.urls),
+    
 ]
-
-in the urls.py from main:
-path('', include('index.urls')),
-
-in the views.py:
-from django.shortcuts import render
-from django.http import  HttpResponse
-
-# Create your views here.
-
-def home(request):
-
-    return HttpResponse("hello");
-
-
-[os.path.join(BASE_DIR, 'template')]
-STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'static_in_env'),
-]
-VENV_PATH = os.path.dirname(BASE_DIR)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
-
-URLS:
-from django.conf import settings
-from django.conf.urls.static import static
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL,
-                          document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
-
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
-
-
-after making statics
-
-python manage.py collectstatic
-
-python manage.py startapp post
-pip install pillow => to work with images
-
+```
