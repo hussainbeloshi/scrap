@@ -158,7 +158,9 @@ def home(request):
 ```
 {% for i in Post %}
 ```
-```{{ i.title }}```
+```
+{{ i.title }}
+```
 ```
 {% endfor %}
 ```
