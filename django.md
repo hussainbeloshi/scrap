@@ -126,3 +126,5 @@ class Text(models.Model):
     def __str__(self):
         return self.title
 ```
+
+3. Install Pillow for the images: ```python -m pip install Pillow```
