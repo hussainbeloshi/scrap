@@ -94,4 +94,7 @@ and the following on the bottum of the page:
 ```
 {% endblock content %}
 ```
-23. Call the static files (```.css``` and ```.js```) by using Jinja syntax before the static path, e.g.: ```{% static 'vendor/jquery/jquery.min.js' %}```
+23. Call the static files (```.css``` and ```.js```) by using Jinja syntax before the static path, e.g.:
+```
+{% static 'vendor/jquery/jquery.min.js' %}
+```
