@@ -66,3 +66,31 @@ MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
 17. Now collect the statics by using the following command: ```python manage.py collectstatic```
 18. Create ```base.html``` ```head.html``` ```nav.html``` in the ```temp``` directory
 19. Go to the ```index.html``` and cut the ```<head>``` and paste it in the ```head.html```, and the ```<!-- Navigation -->``` and paste it in the ```nav.html```
+20. Add ```{% load static %}``` on the top of all the html pages.
+21. Add the following in the ```base.html``` file:
+```
+<!DOCTYPE html>
+<html>
+
+{% include "head.html" %}
+
+    <body>
+    {% include "nav.html" %}
+
+    {% block content %}
+    {% endblock content %}
+
+    </body>
+
+</html>
+```
+22. for the ```index.html``` page, add the following on the top of the page:
+```
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+```
+and the following on the bottum of the page:
+```
+{% endblock content %}
+```
