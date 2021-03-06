@@ -64,8 +64,8 @@ MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
 ```
 
 17. Now collect the statics by using the following command: ```python manage.py collectstatic```
-18. Create ```base.html``` ```head.html``` ```nav.html``` in the ```temp``` directory
-19. Go to the ```index.html``` and cut the ```<head>``` and paste it in the ```head.html```, and the ```<!-- Navigation -->``` and paste it in the ```nav.html```
+18. Create ```base.html``` ```head.html``` ```nav.html``` ```footer.html``` in the ```temp``` directory
+19. Go to the ```index.html``` and cut the ```<head>``` and paste it in the ```head.html```, and cut the ```<!-- Navigation -->``` and paste it in the ```nav.html```, and cut the ```<!-- Footer -->``` and paste it in the ```footer.html```
 20. Add ```{% load static %}``` on the top of all the html pages.
 21. Add the following in the ```base.html``` file:
 ```
@@ -163,4 +163,17 @@ def home(request):
 ```
 ```
 {% endfor %}
+```
+
+3. To make the imgaes works add ```.url``` to be like this: ```{{ i.img.url }}```, and go to the ```urls.py``` of the app, and add the following:
+```
+from django.conf import settings
+from django.conf.urls.static import static
+```
+```
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
 ```
