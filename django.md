@@ -33,7 +33,18 @@ urlpatterns = [
 ```
 
 11. Test the localhost by using this command: ```python manage.py runserver```
-12. Call the templates and the statics from the (```PROJECTNAME/settings.py```) by add the following in the ```TEMPLATES``` ```'DIRS':```:
+12. Go to the (```PROJECTNAME/settings.py```), and add the following line on the top of the page: ```import os```
+13. Call the templates and the statics from the (```PROJECTNAME/settings.py```) by add the following in the ```TEMPLATES``` ```'DIRS':```:
 ```
 'DIRS': [os.path.join(BASE_DIR, 'temp')],
+```
+
+
+14. On the buttom of the file, next to the ```STATIC_URL = '/static/'```, add the following lines: 
+```
+MEDIA_URL = '/media/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+VENV_PATH = os.path.dirname(BASE_DIR)
+STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
+MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
 ```
