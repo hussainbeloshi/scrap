@@ -32,7 +32,7 @@ urlpatterns = [
 ]
 ```
 
-11. Add the following in the ```views .py```: 
+11. Add the following in the ```views .py``` (for testing only, and then we will change the ```HttpResponse``` to ```render```): 
 ```
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -48,8 +48,13 @@ def home(request):
 'DIRS': [os.path.join(BASE_DIR, 'temp')],
 ```
 
+15. Go to ```views.py``` file in the app directory, and change the ```HttpResponse``` in the ```def``` to ```render```, to be like the following:
+```
+def home(request):
+    return render(request, "index.html");
+```
 
-15. On the buttom of the file, next to the ```STATIC_URL = '/static/'```, add the following lines: 
+16. On the buttom of the file, next to the ```STATIC_URL = '/static/'```, add the following lines: 
 ```
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
