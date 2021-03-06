@@ -136,3 +136,28 @@ from .models import Text
 
 admin.site.register(Text)
 ```
+
+
+## CREATE LOOP
+
+1. Go to ```views.py``` (the app file), and import the calss you created, and add the following:
+```
+from django.shortcuts import render
+from .models import Text
+
+def home(request):
+    queryset = Text.objects.all()
+    
+    context = {
+        'Post': queryset,
+    }
+    return render(request, 'index.html', context)
+```
+
+2. Go to the ```index.html``` file and write the loop/Jinja:
+```
+{% for text in dests %}
+```
+```
+{% endfor %}
+```
