@@ -31,3 +31,5 @@ urlpatterns = [
     
 ]
 ```
+
+11. Test the localhost by using this command: ```python manage.py runserver```
