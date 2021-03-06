@@ -33,3 +33,7 @@ urlpatterns = [
 ```
 
 11. Test the localhost by using this command: ```python manage.py runserver```
+12. Call the templates and the statics from the (```PROJECTNAME/settings.py```) by add the following in the ```TEMPLATES``` ```'DIRS':```:
+```
+'DIRS': [os.path.join(BASE_DIR, 'temp')],
+```
