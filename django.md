@@ -62,3 +62,5 @@ VENV_PATH = os.path.dirname(BASE_DIR)
 STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
 ```
+
+17. Now collect the statics by using the following command: ```python manage.py collectstatic```
