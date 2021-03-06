@@ -98,3 +98,16 @@ and the following on the bottum of the page:
 ```
 {% static 'vendor/jquery/jquery.min.js' %}
 ```
+
+
+## CREATE DATABASE (SQLITE3)
+
+1. Go to the ```settings.py```, and find: ```DATABASES = {```. To be as the following:
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+```
