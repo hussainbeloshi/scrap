@@ -64,3 +64,5 @@ MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
 ```
 
 17. Now collect the statics by using the following command: ```python manage.py collectstatic```
+18. Create ```base.html``` ```head.html``` ```footer.html``` ```header.html``` in the ```temp``` directory.
+19. 
